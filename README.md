@@ -1,4 +1,4 @@
-# Performance Filter Microservice
+# Performance Result Filter Microservice
 
 ### Introduction
 
@@ -11,24 +11,25 @@ service apis :
 * performance_report_filter
 
 ##### What does performance_report_filter micro-service do?
-If release is given in the input then compare the given release with the default release configured in mongo db else compare with the latest release performance report with its previous release and 
-pass the same release to the base microservice which returns the performace reports url. This url is the output of this filter service.
+If release is given in the input then compare the given release with the default release configured in mongo db else compare with the latest release performance report with its previous release and pass the same release to the base microservice which returns the performace reports url. This url is the output of this filter service.
 
 ### Pre-Requisite
 
 1. python 3.6.0 or above version.
-2. docker (optional) Refer [Install Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04) documentation.
-3. mongo-db
+2. docker Refer [Install Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04) documentation.
+3. [mongo-db] (https://www.mongodb.com/)
 
 ## Installation
 ### Checkout Repository
 ```
-$git clone https://github.com/digitedevops/MS-PerfService.git
+$git clone https://github.com/swiftops/performance-service.git
 ```
+
 ##### Configuration
 
 Steps :
 1. Open system.properties edit consul ip
+2. Open config.ini and edit `<auth_token>` and `<user_id>`.
 
 ### 1. Deploy inside Docker
     
@@ -48,7 +49,6 @@ http://<MACHINE-IP>/perfservice/performance_report_filter
 ---
 To autodeploy your docker container based service on server used below steps
 * You need to configure Gitlab Runner to execute Gitlab CI/CD Pipeline. See [Gitlab Config](https://docs.gitlab.com/runner/install)
-<Configure .gitlab-ci.yml and deploy.sh as per your need and remove this line>
 
 As soon as you configure runner auto deployment will start as you commited the code in repository.
 refer .gitlab-ci.yml file.
@@ -56,7 +56,7 @@ refer .gitlab-ci.yml file.
 ### 3. Deploy on local environment.
 ----
 ##### Pre-Requisite
-* Open system.properties edit database ip
+* Open system.properties edit consul ip
  
 #### 3. Create Virtual Environment
 Virtualenv is the easiest and recommended way to configure a custom Python environment for your services.
@@ -113,7 +113,7 @@ http://flask.pocoo.org/docs/1.0/quickstart/
 The Gunicorn "Green Unicorn" (pronounced gee-unicorn)[2] is a Python Web Server Gateway Interface (WSGI) HTTP server. 
 
 ###### Features
-* Natively supports WSGI, web2py, Django and Paster
+* Natively supports [WSGI] (https://wsgi.readthedocs.io/en/latest/what.html) , [web2py] (http://www.web2py.com/) and [Django] (https://www.djangoproject.com/).
 * Automatic worker process management
 * Simple Python configuration
 * Multiple worker configurations
