@@ -22,7 +22,7 @@ If release is given in the input then compare the given release with the default
 ## Installation
 ### Checkout Repository
 ```
-$git clone https://github.com/swiftops/performance-service.git
+$git clone https://github.com/swiftops/performance-result-filter-service.git
 ```
 
 ##### Configuration
