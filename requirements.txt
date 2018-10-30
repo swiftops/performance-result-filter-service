@@ -1,7 +1,7 @@
 Flask
-Flask-Cors==3.0.3
-requests==2.18.4
-pymongo==3.6.1
-python-consul==0.7.2
+Flask-Cors
+requests
+pymongo
+python-consul
 gunicorn
 elastic-apm
